@@ -1,11 +1,424 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Main Page</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <script src="./Scripts/snow.js" defer></script>
+    <script src="./Scripts/projects.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <section id="home" class="title">
+        <div class="snowfall" aria-hidden="true"></div>
+        <h1>Samuel Penney</h1>
+        <section class="buttons">
+          <a href="#about" class="button">About Me</a>
+          <a href="resume.html" class="button">Resume</a>
+        </section>
+      </section>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <section id="about" class="about-section">
+        <div class="profile-stack">
+          <article class="profile-card">
+            <img src="./images/AboutMe.jpeg" alt="Samuel Penney outdoors" />
+            <div class="profile-copy">
+              <p class="eyebrow">About me</p>
+              <h2>Hello, I'm Samuel Penney</h2>
+              <p>
+                I am a software engineering and cybersecurity management student
+                who enjoys building useful things, solving difficult problems,
+                and learning how technology can make a difference.
+              </p>
+            </div>
+          </article>
+          <article class="github-card">
+            <div class="card-heading">
+              <h2>GitHub contributions</h2>
+            </div>
+            <img
+              src="https://ghchart.rshah.org/samuelpenney"
+              alt="GitHub contribution graph for samuelpenney"
+            />
+          </article>
+        </div>
+        <div class="hobby-content">
+          <h2>My Hobbies:</h2>
+          <div class="hobby-grid">
+            <article class="hobby-card">
+              <img
+                src="./images/Hobbie1.jpeg"
+                alt="Skiing on a snowy mountain"
+              />
+              <h3>Skiing</h3>
+            </article>
+            <article class="hobby-card">
+              <img src="./images/Hobbie2.jpeg" alt="Golfing" />
+              <h3>Golfing</h3>
+            </article>
+            <article class="hobby-card">
+              <img src="./images/Hobbie3.jpeg" alt="Biking" />
+              <h3>Biking</h3>
+            </article>
+            <article class="contact-card">
+              <h3>Stay connected</h3>
+              <div class="contact-links">
+                <a
+                  href="https://github.com/samuelpenney"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="GitHub"
+                  ><img src="https://cdn.simpleicons.org/github/ffffff" alt=""
+                /></a>
+                <a
+                  href="https://www.linkedin.com/in/samuel-penney-737283395/"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="LinkedIn"
+                  ><img
+                    src="https://api.iconify.design/mdi/linkedin.svg?color=%23ffffff"
+                    alt=""
+                /></a>
+                <a
+                  href="https://www.instagram.com/samuel.penney/"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Instagram"
+                  ><img
+                    src="https://cdn.simpleicons.org/instagram/ffffff"
+                    alt=""
+                /></a>
+                <a href="mailto:scpenney2@gmail.com" aria-label="Email"
+                  ><img
+                    src="https://api.iconify.design/mdi/email.svg?color=%23ffffff"
+                    alt=""
+                /></a>
+              </div>
+            </article>
+          </div>
+        </div>
+        <section class="education-section" aria-labelledby="education-title">
+          <h2 id="education-title">Education</h2>
+          <div class="degree-grid">
+            <article class="degree-card">
+              <img
+                src="./images/University_of_Montana_logo_(2013).svg.webp"
+                alt="University of Montana logo"
+              />
+              <div>
+                <p class="eyebrow">Bachelor of Science</p>
+                <h3>Computer Science, Concentration in Software Engineering</h3>
+                <p>University of Montana, Missoula, MT</p>
+                <p>Expected Graduation: May 2028</p>
+              </div>
+            </article>
+            <article class="degree-card">
+              <img
+                src="./images/University_of_Montana_logo_(2013).svg.webp"
+                alt="University of Montana logo"
+              />
+              <div>
+                <p class="eyebrow">Certificate in Undergraduate Studies</p>
+                <h3>Cybersecurity Management</h3>
+                <p>University of Montana, Missoula, MT</p>
+                <p>Expected Completion: May 2028</p>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="experience-section" aria-labelledby="experience-title">
+          <h2 id="experience-title">Professional Experience</h2>
+          <div class="experience-grid">
+            <article class="degree-card">
+              <img
+                src="./images/RedLeg_TypeRed@3x-e1693333651959.png"
+                alt="Red Leg Brewing Company logo"
+              />
+              <div>
+                <p class="eyebrow">Dishwasher</p>
+                <h3>Red Leg Brewing Company</h3>
+                <p>Location: Colorado Springs, CO</p>
+                <p>Duration: June 2023 - July 2024</p>
+              </div>
+            </article>
+            <article class="degree-card">
+              <img
+                src="./images/Campusdining.png"
+                alt="University of Montana Campus Dining logo"
+              />
+              <div>
+                <p class="eyebrow">Student Employee</p>
+                <h3>University of Montana Campus Dining</h3>
+                <p>Location: Missoula, MT</p>
+                <p>Duration: August 2026 - Present</p>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="skills-section" aria-labelledby="skills-title">
+          <h2 id="skills-title">Skills</h2>
+          <div class="skills-grid">
+            <article class="skill-card">
+              <img src="https://cdn.simpleicons.org/python/ffffff" alt="" />
+              <h3>Python</h3>
+            </article>
+            <article class="skill-card">
+              <img src="https://api.iconify.design/logos/java.svg" alt="" />
+              <h3>Java</h3>
+            </article>
+            <article class="skill-card">
+              <img src="https://cdn.simpleicons.org/cplusplus/ffffff" alt="" />
+              <h3>C++</h3>
+            </article>
+            <article class="skill-card">
+              <img
+                src="https://cdn.simpleicons.org/unrealengine/ffffff"
+                alt=""
+              />
+              <h3>Unreal Engine</h3>
+            </article>
+            <article class="skill-card">
+              <img src="https://cdn.simpleicons.org/html5/ffffff" alt="" />
+              <h3>HTML</h3>
+            </article>
+            <article class="skill-card css-skill">
+              <img src="./images/icons8-css-90.png" alt="" />
+              <h3>CSS</h3>
+            </article>
+            <article class="skill-card">
+              <img src="https://cdn.simpleicons.org/javascript/ffffff" alt="" />
+              <h3>JavaScript</h3>
+            </article>
+            <article class="skill-card">
+              <img
+                src="https://cdn.simpleicons.org/scikitlearn/ffffff"
+                alt=""
+              />
+              <h3>Scikit-Learn</h3>
+            </article>
+            <article class="skill-card">
+              <img src="https://cdn.simpleicons.org/numpy/ffffff" alt="" />
+              <h3>Numpy</h3>
+            </article>
+            <article class="skill-card">
+              <img src="https://cdn.simpleicons.org/pandas/ffffff" alt="" />
+              <h3>Pandas</h3>
+            </article>
+            <article class="skill-card">
+              <img src="https://cdn.simpleicons.org/firebase/ffffff" alt="" />
+              <h3>Firebase</h3>
+            </article>
+            <article class="skill-card">
+              <img src="https://cdn.simpleicons.org/django/ffffff" alt="" />
+              <h3>Django</h3>
+            </article>
+          </div>
+        </section>
+        <section
+          id="projects"
+          class="projects-section"
+          aria-labelledby="projects-title"
+        >
+          <h2 id="projects-title">Projects</h2>
+          <div class="projects-grid">
+            <article
+              class="project-card project-featured"
+              data-title="Gravity Simulator"
+              data-description="A visual simulation project exploring gravitational interactions, motion, and the way complex systems can emerge from simple rules."
+              data-skills="C++,Unreal Engine,Matplotlib"
+              data-gallery="./images/GravSimProj.png,./images/IMG_4141.jpeg"
+              data-github="https://github.com/samuelpenney"
+            >
+              <button type="button" class="project-trigger">
+                <img
+                  src="./images/GravSimProj.png"
+                  alt="Gravity simulator project preview"
+                />
+                <span>Gravity Simulator</span>
+              </button>
+            </article>
+            <article
+              class="project-card project-wide"
+              data-title="Portfolio Website"
+              data-description="A responsive personal portfolio built around a snowy mountain scene, animated snowfall, and modular sections for showcasing work and experience."
+              data-skills="HTML,CSS,JavaScript"
+              data-gallery="./images/AboutMe.jpeg,./images/Hobbie3.jpeg"
+              data-github="https://github.com/samuelpenney"
+            >
+              <button type="button" class="project-trigger">
+                <img
+                  src="./images/AboutMe.jpeg"
+                  alt="Portfolio website project preview"
+                />
+                <span>Portfolio Website</span>
+              </button>
+            </article>
+            <article
+              class="project-card project-tall"
+              data-title="Project 3"
+              data-description="Waiting to add a description."
+              data-skills="HTML,CSS,JavaScript"
+              data-gallery="./images/Hobbie3.jpeg,./images/Hobbie2.jpeg"
+              data-github="https://github.com/samuelpenney"
+            >
+              <button type="button" class="project-trigger">
+                <img
+                  src="./images/Hobbie3.jpeg"
+                  alt="Project 3 preview"
+                />
+                <span>Project 3</span>
+              </button>
+            </article>
+            <article
+              class="project-card project-tall"
+              data-title="Project 4"
+              data-description="Waiting to add a description."
+              data-skills="HTML,CSS,JavaScript"
+              data-gallery="./images/Hobbie1.jpeg,./images/GravSimProj.png"
+              data-github="https://github.com/samuelpenney"
+            >
+              <button type="button" class="project-trigger">
+                <img
+                  src="./images/Hobbie1.jpeg"
+                  alt="Snowfall animation project preview"
+                />
+                <span>Project 4</span>
+              </button>
+            </article>
+            <article
+              class="project-card project-tall"
+              data-title="Project 5"
+              data-description="Waiting to add a description."
+              data-skills="HTML,CSS,JavaScript"
+              data-gallery="./images/Hobbie2.jpeg,./images/AboutMe.jpeg"
+              data-github="https://github.com/samuelpenney"
+            >
+              <button type="button" class="project-trigger">
+                <img
+                  src="./images/Hobbie2.jpeg"
+                  alt="Project 5 preview"
+                />
+                <span>Project 5</span>
+              </button>
+            </article>
+            <article
+              class="project-card"
+              data-title="Project 6"
+              data-description="Waiting to add a description."
+              data-skills="Python,Pandas,Numpy,Matplotlib"
+              data-gallery="./images/IMG_4141.jpeg,./images/GravSimProj.png"
+              data-github="https://github.com/samuelpenney"
+            >
+              <button type="button" class="project-trigger">
+                <img
+                  src="./images/IMG_4141.jpeg"
+                  alt="Data explorer project preview"
+                />
+                <span>Project 6</span>
+              </button>
+            </article>
+            <article
+              class="project-card project-wide"
+              data-title="Project 7"
+              data-description="Waiting to add a description."
+              data-skills="Python,Pandas,JavaScript"
+              data-gallery="./images/GravSimProj.png,./images/Hobbie2.jpeg"
+              data-github="https://github.com/samuelpenney"
+            >
+              <button type="button" class="project-trigger">
+                <img
+                  src="./images/GravSimProj.png"
+                  alt="Mountain data dashboard project preview"
+                />
+                <span>Project 7</span>
+              </button>
+            </article>
+            <article
+              class="project-card"
+              data-title="Project 8"
+              data-description="Waiting to add a description."
+              data-skills="Python,Django,JavaScript"
+              data-gallery="./images/IMG_4141.jpeg,./images/AboutMe.jpeg"
+              data-github="https://github.com/samuelpenney"
+            >
+              <button type="button" class="project-trigger">
+                <img
+                  src="./images/IMG_4141.jpeg"
+                  alt="Project 8 preview"
+                />
+                <span>Project 8</span>
+              </button>
+            </article>
+          </div>
+        </section>
+        <section
+          id="contact"
+          class="contact-section"
+          aria-labelledby="contact-title"
+        >
+          <div>
+            <p class="eyebrow">Let's connect</p>
+            <h2 id="contact-title">Contact Me</h2>
+            <p>
+              Have a question or want to work together? Send me an email and I
+              will get back to you.
+            </p>
+          </div>
+          <div class="contact-actions">
+            <a class="contact-email" href="mailto:scpenney2@gmail.com">
+              scpenney2@gmail.com
+            </a>
+            <div class="contact-socials">
+              <a
+                href="https://github.com/samuelpenney"
+                target="_blank"
+                rel="noreferrer"
+                >GitHub</a
+              >
+              <a
+                href="https://www.linkedin.com/in/samuel-penney-737283395/"
+                target="_blank"
+                rel="noreferrer"
+                >LinkedIn</a
+              >
+              <a
+                href="https://www.instagram.com/samuel.penney/"
+                target="_blank"
+                rel="noreferrer"
+                >Instagram</a
+              >
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+    <dialog class="project-dialog" aria-labelledby="project-dialog-title">
+      <button
+        class="dialog-close"
+        type="button"
+        aria-label="Close project details"
+      >
+        &times;
+      </button>
+      <div class="dialog-content">
+        <p class="eyebrow">Project details</p>
+        <h2 id="project-dialog-title"></h2>
+        <p class="dialog-description"></p>
+        <div>
+          <p class="dialog-label">Skills used</p>
+          <div class="dialog-skills"></div>
+        </div>
+        <div class="dialog-gallery"></div>
+        <a class="dialog-github" href="" target="_blank" rel="noreferrer"
+          >View on GitHub</a
+        >
+      </div>
+    </dialog>
+  </body>
 </html>
