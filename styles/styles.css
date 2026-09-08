@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   position: relative;
@@ -230,6 +234,7 @@ main > section:not(.title),
   padding: 5rem 2rem 7rem;
   color: #f8f1d8;
   font-family: "JetBrains Mono", monospace;
+  scroll-margin-top: 4rem;
 }
 
 .profile-card,
