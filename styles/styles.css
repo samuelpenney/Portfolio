@@ -2,6 +2,7 @@
 
 body {
   margin: 0;
+  position: relative;
   background: #1c303d;
 }
 
@@ -75,9 +76,11 @@ body {
 .snowfall {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: var(--snow-page-height, 100vh);
   overflow: hidden;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
 }
 
 .snowflake {
@@ -98,17 +101,32 @@ body {
     transform: translate3d(0, -1rem, 0);
   }
   50% {
-    transform: translate3d(var(--snow-drift), 52vh, 0);
+    transform: translate3d(
+      var(--snow-drift),
+      calc(var(--snow-page-height) * 0.5),
+      0
+    );
   }
   100% {
-    transform: translate3d(calc(var(--snow-drift) * -0.7), 105vh, 0);
+    transform: translate3d(
+      calc(var(--snow-drift) * -0.7),
+      var(--snow-page-height),
+      0
+    );
   }
 }
 
 .title > h1,
+.title > h2,
 .title > .buttons {
   position: relative;
-  z-index: 1;
+  z-index: 6;
+}
+
+main > section:not(.title),
+.site-nav {
+  position: relative;
+  z-index: 2;
 }
 
 .title h1 {
@@ -116,6 +134,17 @@ body {
   padding: 0;
   color: #f8f1d8;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.title h2 {
+  max-width: 36rem;
+  margin: 0.75rem 1.25rem 0;
+  color: rgba(248, 241, 216, 0.82);
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(0.95rem, 2vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.4;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.45);
 }
 
 .buttons {
@@ -364,7 +393,7 @@ body {
   max-height: 8rem;
   object-fit: contain;
   margin: 1rem 0;
-  background: rgba(8, 26, 53, 0.45);
+  background: transparent;
 }
 
 .github-card a,
