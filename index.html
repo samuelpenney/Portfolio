@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Main Page</title>
     <link rel="stylesheet" href="./styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/github-contrib-graph@3.1.1/dist/gh.css"
+    />
     <script src="./Scripts/snow.js" defer></script>
     <script src="./Scripts/projects.js" defer></script>
+    <script src="./Scripts/contact.js" defer></script>
+    <script src="https://unpkg.com/github-contrib-graph@3.1.1/dist/browser.global.js"></script>
   </head>
   <body>
     <div class="snowfall" aria-hidden="true"></div>
@@ -40,13 +46,18 @@
             </div>
           </article>
           <article class="github-card">
-            <div class="card-heading">
+            <section class="card-heading">
               <h2>GitHub contributions</h2>
-            </div>
-            <img
-              src="https://ghchart.rshah.org/samuelpenney"
-              alt="GitHub contribution graph for samuelpenney"
-            />
+            </section>
+            <section
+              id="gh"
+              class="github-contribution-graph"
+              data-login="samuelpenney"
+              data-show-thumbnail="false"
+              data-show-header="false"
+              data-show-footer="false"
+              aria-label="GitHub contribution graph for samuelpenney"
+            ></section>
           </article>
         </div>
         <div class="hobby-content">
@@ -67,40 +78,12 @@
               <img src="./images/Hobbie3.jpeg" alt="Biking" />
               <h3>Biking</h3>
             </article>
-            <article class="contact-card">
-              <h3>Stay connected</h3>
-              <div class="contact-links">
-                <a
-                  href="https://github.com/samuelpenney"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="GitHub"
-                  ><img src="https://cdn.simpleicons.org/github/ffffff" alt=""
-                /></a>
-                <a
-                  href="https://www.linkedin.com/in/samuel-penney-737283395/"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="LinkedIn"
-                  ><img
-                    src="https://api.iconify.design/mdi/linkedin.svg?color=%23ffffff"
-                    alt=""
-                /></a>
-                <a
-                  href="https://www.instagram.com/samuel.penney/"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Instagram"
-                  ><img
-                    src="https://cdn.simpleicons.org/instagram/ffffff"
-                    alt=""
-                /></a>
-                <a href="mailto:scpenney2@gmail.com" aria-label="Email"
-                  ><img
-                    src="https://api.iconify.design/mdi/email.svg?color=%23ffffff"
-                    alt=""
-                /></a>
-              </div>
+            <article class="leetcode-card">
+              <h3>LeetCode solved</h3>
+              <img
+                src="https://leetcard.jacoblin.cool/samuelpenney?theme=dark&font=JetBrains%20Mono&ext=heatmap&bg=263d52"
+                alt="LeetCode problems solved for samuelpenney"
+              />
             </article>
           </div>
         </div>
@@ -219,6 +202,10 @@
               <img src="https://cdn.simpleicons.org/django/ffffff" alt="" />
               <h3>Django</h3>
             </article>
+            <article class="skill-card">
+              <img src="https://cdn.simpleicons.org/swift/ffffff" alt="" />
+              <h3>Swift</h3>
+            </article>
           </div>
         </section>
         <section
@@ -231,10 +218,10 @@
             <article
               class="project-card project-featured"
               data-title="Gravity Simulator"
-              data-description="A visual simulation project exploring gravitational interactions, motion, and the way complex systems can emerge from simple rules."
-              data-skills="C++,Unreal Engine,Matplotlib"
-              data-gallery="./images/GravSimProj.png,./images/IMG_4141.jpeg"
-              data-github="https://github.com/samuelpenney"
+              data-description="A visual simulation project exploring gravitational interactions, motion, and the way complex systems can emerge from simple rules. Completely from scratch in C++."
+              data-skills="C++"
+              data-gallery="./images/GravSimProj.png,./images/GravSim2.png"
+              data-github="https://github.com/samuelpenney/GravitySim"
             >
               <button type="button" class="project-trigger">
                 <img
@@ -249,12 +236,12 @@
               data-title="Portfolio Website"
               data-description="A responsive personal portfolio built around a snowy mountain scene, animated snowfall, and modular sections for showcasing work and experience."
               data-skills="HTML,CSS,JavaScript"
-              data-gallery="./images/AboutMe.jpeg,./images/Hobbie3.jpeg"
-              data-github="https://github.com/samuelpenney"
+              data-gallery="./images/Portfolio1.png,./images/Portfolio2.png"
+              data-github="https://github.com/samuelpenney/Portfolio"
             >
               <button type="button" class="project-trigger">
                 <img
-                  src="./images/AboutMe.jpeg"
+                  src="./images/Portfolio1.png"
                   alt="Portfolio website project preview"
                 />
                 <span>Portfolio Website</span>
@@ -282,10 +269,7 @@
               data-github="https://github.com/samuelpenney"
             >
               <button type="button" class="project-trigger">
-                <img
-                  src="./images/Hobbie1.jpeg"
-                  alt="Snowfall animation project preview"
-                />
+                <img src="./images/Hobbie1.jpeg" alt="Project 4 preview" />
                 <span>Project 4</span>
               </button>
             </article>
@@ -363,28 +347,36 @@
             </p>
           </div>
           <div class="contact-actions">
-            <a class="contact-email" href="mailto:scpenney2@gmail.com">
-              scpenney2@gmail.com
-            </a>
+            <button class="contact-email" type="button" aria-label="Email">
+              <img
+                src="https://api.iconify.design/mdi/email.svg?color=%23ffffff"
+                alt=""
+              />
+            </button>
             <div class="contact-socials">
               <a
                 href="https://github.com/samuelpenney"
                 target="_blank"
                 rel="noreferrer"
-                >GitHub</a
-              >
+                aria-label="GitHub"
+                ><img src="https://cdn.simpleicons.org/github/ffffff" alt=""
+              /></a>
               <a
                 href="https://www.linkedin.com/in/samuel-penney-737283395/"
                 target="_blank"
                 rel="noreferrer"
-                >LinkedIn</a
-              >
+                aria-label="LinkedIn"
+                ><img
+                  src="https://api.iconify.design/mdi/linkedin.svg?color=%23ffffff"
+                  alt=""
+              /></a>
               <a
                 href="https://www.instagram.com/samuel.penney/"
                 target="_blank"
                 rel="noreferrer"
-                >Instagram</a
-              >
+                aria-label="Instagram"
+                ><img src="https://cdn.simpleicons.org/instagram/ffffff" alt=""
+              /></a>
             </div>
           </div>
         </section>
@@ -411,6 +403,37 @@
           >View on GitHub</a
         >
       </div>
+    </dialog>
+    <dialog class="contact-dialog" aria-labelledby="contact-dialog-title">
+      <button
+        class="dialog-close contact-dialog-close"
+        type="button"
+        aria-label="Close contact form"
+      >
+        &times;
+      </button>
+      <form class="contact-form">
+        <p class="eyebrow">Let's connect</p>
+        <h2 id="contact-dialog-title">Send me a message</h2>
+        <label for="sender-email">Your email</label>
+        <input id="sender-email" name="sender-email" type="email" required />
+        <label for="message-subject">Subject</label>
+        <input
+          id="message-subject"
+          name="message-subject"
+          type="text"
+          required
+        />
+        <label for="message-body">Message</label>
+        <textarea
+          id="message-body"
+          name="message-body"
+          rows="6"
+          required
+        ></textarea>
+        <p class="contact-form-status" role="status" aria-live="polite"></p>
+        <button class="contact-submit" type="submit">Open email</button>
+      </form>
     </dialog>
   </body>
 </html>

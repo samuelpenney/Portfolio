@@ -236,6 +236,7 @@ main > section:not(.title),
 .hobby-card,
 .github-card,
 .contact-card,
+.leetcode-card,
 .education-section,
 .degree-card,
 .experience-section,
@@ -252,22 +253,24 @@ main > section:not(.title),
 
 .profile-card,
 .hobby-card,
-.github-card,
 .degree-card,
 .skill-card,
-.experience-card {
+.experience-card,
+.leetcode-card,
+.github-card {
   transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .profile-card:hover,
 .hobby-card:hover,
-.github-card:hover,
 .degree-card:hover,
 .experience-card:hover,
-.skill-card:hover {
+.skill-card:hover,
+.github-card:hover,
+.leetcode-card:hover {
   border-color: rgba(255, 241, 184, 0.85);
   box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.35);
   transform: translateY(-0.4rem);
@@ -380,6 +383,8 @@ main > section:not(.title),
   justify-content: space-between;
   padding: 1.25rem;
   background: rgba(38, 61, 82, 0.82);
+  overflow: visible;
+  z-index: 3;
 }
 
 .card-heading h2,
@@ -388,12 +393,56 @@ main > section:not(.title),
   color: #f8f1d8;
 }
 
-.github-card img {
-  width: 100%;
-  max-height: 8rem;
-  object-fit: contain;
+.github-contribution-graph {
+  --gh-bg-color: transparent;
+  --gh-text-default-color: #f8f1d8;
+  --gh-cell-level0-color: rgba(8, 26, 53, 0.55);
+  --gh-cell-level1-color: #526b78;
+  --gh-cell-level2-color: #718f91;
+  --gh-cell-level3-color: #b9c4a8;
+  --gh-cell-level4-color: #fff1b8;
+  --gh-cell-size: 5px;
+  --gh-cell-gap: 2px;
+  --gh-cell-radius: 1px;
+  --gh-border-card-color: transparent;
+  --gh-font-default-family: "JetBrains Mono", monospace;
+  position: relative;
+  top: -1rem;
+  left: -2.55rem;
+  width: 79%;
+  max-width: 100%;
   margin: 1rem 0;
+  overflow: visible;
+  color: #f8f1d8;
+  transform: scale(1.4);
+  transform-origin: top left;
+}
+
+.github-contribution-graph .ghCalendarTooltip {
+  display: none !important;
+  /* z-index: 20; */
+}
+
+.github-contribution-graph .ghCalendarHeader,
+.github-contribution-graph .ghCalendarCardFooter,
+.github-contribution-graph .ghCalendarLabel {
+  display: none;
+}
+
+.github-contribution-graph .ghCalendarCard {
+  width: 100%;
+  padding: 0;
+  border: 0;
   background: transparent;
+}
+
+.github-contribution-graph .ghCalendarCanvas {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.github-contribution-graph .ghCalendarTable {
+  max-width: 100%;
 }
 
 .github-card a,
@@ -414,6 +463,28 @@ main > section:not(.title),
   justify-content: space-between;
   padding: 1.25rem;
   background: #263d52;
+}
+
+.leetcode-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem;
+  background: rgba(38, 61, 82, 0.82);
+}
+
+.leetcode-card h3 {
+  margin: 0;
+  color: #f8f1d8;
+}
+
+.leetcode-card img {
+  display: block;
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  height: 100%;
+  object-fit: contain;
 }
 
 .contact-links {
@@ -653,6 +724,7 @@ main > section:not(.title),
 
 .contact-actions {
   display: grid;
+  width: min(100%, 24rem);
   gap: 1rem;
   justify-items: end;
 }
@@ -664,9 +736,14 @@ main > section:not(.title),
 }
 
 .contact-email {
+  box-sizing: border-box;
+  width: 100%;
   padding: 0.7rem 1rem;
   border: 1px solid #fdf3ca;
   border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  text-align: center;
 }
 
 .contact-email:hover,
@@ -677,11 +754,48 @@ main > section:not(.title),
   text-decoration: underline;
 }
 
+.contact-email:hover,
+.contact-email:focus-visible {
+  background: rgba(253, 243, 202, 0.15);
+  transform: translateY(-2px);
+}
+
 .contact-socials {
-  display: flex;
-  gap: 1rem;
-  font-family: sans-serif;
-  font-size: 0.9rem;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.contact-socials a {
+  display: grid;
+  width: 100%;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid #fdf3ca;
+  border-radius: 4px;
+  background: transparent;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.contact-socials img {
+  width: 1.75rem;
+  height: 1.75rem;
+  object-fit: contain;
+}
+
+.contact-email img {
+  width: 1.75rem;
+  height: 1.75rem;
+  object-fit: contain;
+}
+
+.contact-socials a:hover,
+.contact-socials a:focus-visible {
+  background: rgba(253, 243, 202, 0.15);
+  transform: translateY(-2px);
 }
 
 .projects-grid {
@@ -873,6 +987,95 @@ main > section:not(.title),
 .dialog-close:focus-visible {
   background: #fdf3ca;
   color: #081a35;
+}
+
+.contact-dialog {
+  width: min(90vw, 32rem);
+  padding: 0;
+  border: 1px solid rgba(248, 241, 216, 0.45);
+  border-radius: 8px;
+  color: #f8f1d8;
+  background: #1c303d;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.5);
+}
+
+.contact-dialog::backdrop {
+  background: rgba(3, 11, 24, 0.78);
+  backdrop-filter: blur(4px);
+}
+
+.contact-form {
+  display: grid;
+  gap: 0.5rem;
+  padding: 2rem;
+}
+
+.contact-form .eyebrow {
+  margin-bottom: 0;
+}
+
+.contact-form h2 {
+  margin: 0 0 1rem;
+  color: #fdf3ca;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.contact-form label {
+  margin-top: 0.5rem;
+  color: #fff1b8;
+  font-size: 0.8rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid rgba(248, 241, 216, 0.35);
+  border-radius: 4px;
+  color: #f8f1d8;
+  background: rgba(8, 26, 53, 0.55);
+  font: inherit;
+  padding: 0.7rem;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid #fdf3ca;
+  outline-offset: 2px;
+}
+
+.contact-submit {
+  margin-top: 1rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid #fdf3ca;
+  border-radius: 4px;
+  color: #081a35;
+  background: #fdf3ca;
+  cursor: pointer;
+  font: inherit;
+}
+
+.contact-submit:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.contact-form-status {
+  min-height: 1.25rem;
+  margin: 0.5rem 0 0;
+  color: #fff1b8;
+  font-family: sans-serif;
+  font-size: 0.85rem;
+}
+
+.contact-submit:hover,
+.contact-submit:focus-visible {
+  color: #fdf3ca;
+  background: transparent;
 }
 
 @media (max-width: 800px) {
